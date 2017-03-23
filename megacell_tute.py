@@ -74,4 +74,4 @@ subsampled_clusters = clusters.loc[subset, :]
 umis_per_cell = np.asarray(subsampled_matrix.matrix.sum(axis=0)).squeeze()
 genes_per_cell = np.asarray((subsampled_matrix.matrix > 0).sum(axis=0)).squeeze()
 
-print gene_bc_matrix[:1]
+print (gene_bc_matrix[:1])
