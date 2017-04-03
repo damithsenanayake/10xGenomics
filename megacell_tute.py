@@ -59,19 +59,19 @@ clusters = pd.read_csv("analysis/clustering/graphclust/clusters.csv")
 
 gene_bc_matrix = get_matrix_from_h5(filtered_matrix_h5, genome)
 
-print(gene_bc_matrix.shape)
+print(gene_bc_matrix.matrix.shape)
 
 # load TSNE and graph clustering
-tsne = pd.read_csv("analysis/tsne/2_components/projection.csv")
-clusters = pd.read_csv("analysis/clustering/graphclust/clusters.csv")
-
-subsample_bcs = 2000
-subset = np.sort(np.random.choice(gene_bc_matrix.barcodes.size, size=subsample_bcs, replace=False))
-subsampled_matrix = subsample_matrix(gene_bc_matrix, subset)
-subsampled_tsne = tsne.loc[subset, :]
-subsampled_clusters = clusters.loc[subset, :]
-
-umis_per_cell = np.asarray(subsampled_matrix.matrix.sum(axis=0)).squeeze()
-genes_per_cell = np.asarray((subsampled_matrix.matrix > 0).sum(axis=0)).squeeze()
-
-print (gene_bc_matrix[:1])
+# tsne = pd.read_csv("analysis/tsne/2_components/projection.csv")
+# clusters = pd.read_csv("analysis/clustering/graphclust/clusters.csv")
+#
+# subsample_bcs = 2000
+# subset = np.sort(np.random.choice(gene_bc_matrix.barcodes.size, size=subsample_bcs, replace=False))
+# subsampled_matrix = subsample_matrix(gene_bc_matrix, subset)
+# subsampled_tsne = tsne.loc[subset, :]
+# subsampled_clusters = clusters.loc[subset, :]
+#
+# umis_per_cell = np.asarray(subsampled_matrix.matrix.sum(axis=0)).squeeze()
+# genes_per_cell = np.asarray((subsampled_matrix.matrix > 0).sum(axis=0)).squeeze()
+#
+# print (gene_bc_matrix[:1])
