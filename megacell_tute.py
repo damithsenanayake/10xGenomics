@@ -64,7 +64,7 @@ gene_bc_matrix = get_matrix_from_h5(filtered_matrix_h5, genome)
 tsne = pd.read_csv("analysis/tsne/2_components/projection.csv")
 clusters = pd.read_csv("analysis/clustering/graphclust/clusters.csv")
 
-subsample_bcs = 20e3
+subsample_bcs = 2000
 subset = np.sort(np.random.choice(gene_bc_matrix.barcodes.size, size=subsample_bcs, replace=False))
 subsampled_matrix = subsample_matrix(gene_bc_matrix, subset)
 subsampled_tsne = tsne.loc[subset, :]
