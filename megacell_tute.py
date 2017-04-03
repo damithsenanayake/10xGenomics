@@ -59,9 +59,9 @@ clusters = pd.read_csv("analysis/clustering/graphclust/clusters.csv")
 
 gene_bc_matrix = get_matrix_from_h5(filtered_matrix_h5, genome)
 
-# np.savetxt('gbcm.csv', delimiter=",", X=gene_bc_matrix.matrix.data)
+np.savetxt('gbcm.csv', delimiter=",", X=gene_bc_matrix.matrix[:20000].toarray())
 # print ("hello world")
-print(gene_bc_matrix.matrix[:10].toarray())
+print()
 
 # load TSNE and graph clustering
 # tsne = pd.read_csv("analysis/tsne/2_components/projection.csv")
