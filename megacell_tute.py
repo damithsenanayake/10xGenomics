@@ -61,7 +61,7 @@ gene_bc_matrix = get_matrix_from_h5(filtered_matrix_h5, genome)
 
 # np.savetxt('gbcm.csv', delimiter=",", X=gene_bc_matrix.matrix.data)
 # print ("hello world")
-print(gene_bc_matrix.matrix.toarray()[:10])
+print(gene_bc_matrix.matrix[:10].toarray())
 
 # load TSNE and graph clustering
 # tsne = pd.read_csv("analysis/tsne/2_components/projection.csv")
